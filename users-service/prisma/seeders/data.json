@@ -1,0 +1,46 @@
+{
+  "permissions": [
+    {
+      "id": 1,
+      "name": "Get all users",
+      "method": "GET",
+      "url": "/^\\/api\\/users$/"
+    },
+    {
+      "id": 2,
+      "name": "Get one user",
+      "method": "GET",
+      "url": "/^\\/api\\/users\\/\\d+$/"
+    },
+    {
+      "id": 3,
+      "name": "Create user",
+      "method": "POST",
+      "url": "/^\\/api\\/users$/"
+    },
+    {
+      "id": 4,
+      "name": "Update User",
+      "method": "PUT",
+      "url": "/^\\/api\\/users\\/\\d+$/"
+    },
+    {
+      "id": 5,
+      "name": "Delete user",
+      "method": "DELETE",
+      "url": "/^\\/api\\/users\\/\\d+$/"
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "admin",
+      "permissions": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 2,
+      "name": "user",
+      "permissions": [1]
+    }
+  ]
+}
