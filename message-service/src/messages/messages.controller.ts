@@ -11,13 +11,13 @@ import {
 import { MessagesService } from './messages.service';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { UpdateMessageDto } from './dto/update-message.dto';
-import { MessagePattern } from '@nestjs/microservices';
+import { EventPattern, MessagePattern } from '@nestjs/microservices';
 
 @Controller('messages')
 export class MessagesController {
   constructor(private readonly messagesService: MessagesService) {}
 
-  @MessagePattern({ role: 'user', cmd: 'send-message' })
+  @EventPattern({ role: 'user', cmd: 'send-message' })
   create(createMessageDto: CreateMessageDto) {
     Logger.log('\n\n ' + CreateMessageDto + ' \n\n');
 
